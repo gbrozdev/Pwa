@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="top row">
+        <a class="btn btn-success" href="/notes">+</a>
+    </div>
+    <div class="head">
+        <h1> Find </h1>
+        <p> Find anything here...</p>
+    </div>
+</div>
+<form action="/search" method="post">
+    <input class="form-control" name="search" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+
+<style>
+    .top {
+        position: absolute;
+        right: 50px;
+        margin-top: 20px;
+    }
+
+    .head {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        color: white;
+    }
+</style>

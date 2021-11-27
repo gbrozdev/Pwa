@@ -1,0 +1,73 @@
+<div class="container">
+    <div class="top row">
+        <a class="btn btn-success" href="/newnote">+</a>
+    </div>
+    <div class="head">
+        <h1> Notes </h1>
+        <p>add your notes here...</p>
+    </div>
+</div>
+<form action="/search/notes" method="post">
+    <input class="form-control" name="search" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+<div class="note-div" >
+
+    {{#if search}}
+    <a href="/notes/" class="btn btn-success" style="margin: 60px;"><=</a>
+
+      <div class="card  " style="width: 90%; max-height: 10rem; overflow-y: hidden; padding: 5px; margin: 10px; ">
+    <a href="/note/{{notes._id}}"> 
+        <div class="card-body">
+            <h5 class="card-title">{{notes.title}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{notes.date}}</h6>
+            <p class="card-text">{{notes.note}}</p>
+            <h6  class="card-subtitle mb-2 text-muted" >{{notes.time}} </h6>
+        </div>
+    </a>
+    </div>
+    
+    {{else}}
+
+    {{#if err}}
+    <h1 style="color: white;">No Notes Found. Pls Use Our App Full time</h1>
+    {{/if}}
+
+    {{#each notes}}
+    <div class="card  " style="width: 90%; max-height: 10rem; overflow-y: hidden; padding: 5px; margin: 10px; ">
+    <a href="/note/{{this._id}}"> 
+        <div class="card-body">
+            <h5 class="card-title">{{this.title}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{this.date}}</h6>
+            <p class="card-text">{{this.note}}</p>
+            <h6  class="card-subtitle mb-2 text-muted" >{{this.time}} </h6>
+        </div>
+    </a>
+    </div>
+    {{/each}}
+
+    {{/if}}
+</div>
+
+<style>
+    
+    .note-div {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .top {
+        position: absolute;
+        right: 50px;
+        margin-top: 20px;
+    }
+
+    .head {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        color: white;
+    }
+</style>

@@ -1,0 +1,36 @@
+<form action="/newitem" method="post" class="newnote">
+
+    <label>vegetable</label>
+    <input type="text" name="type" placeholder="type name here...">
+    <label>amount</label>
+    <input type="number" name="amount" placeholder="type amount here...">
+    <label>img link</label>
+    <input type="text" name="img">
+    <input type="text" name="prodId" hidden value="{{prodId}}" >
+    <button class="btn btn-success m-3" type="submit">Add</button>
+</form>
+
+<style>
+    .newnote {
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 30px;
+        color: white;
+        
+    }
+
+    textarea {
+        border-radius: 5px;
+        width: 100%;
+        padding: 10px;
+      
+    }
+
+    input {
+        border-radius: 5px;
+        height: 40px;
+        padding: 10px;
+    }
+</style>

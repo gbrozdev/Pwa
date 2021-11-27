@@ -1,0 +1,33 @@
+<form action="/newnote" method="post" class="newnote">
+
+    <label>Title</label>
+    <input type="text" name="title" placeholder="type name here...">
+    <label>Note</label>
+    <textarea name="note"  cols="30" rows="10" placeholder="add your note here..."></textarea>
+    <button class="btn btn-success m-3" type="submit">Submit</button>
+</form>
+
+<style>
+    .newnote {
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 30px;
+        color: white;
+        
+    }
+
+    textarea {
+        border-radius: 5px;
+        width: 100%;
+        padding: 10px;
+      
+    }
+
+    input {
+        border-radius: 5px;
+        height: 40px;
+        padding: 10px;
+    }
+</style>

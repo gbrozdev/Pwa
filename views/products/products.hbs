@@ -1,0 +1,98 @@
+<div class="container">
+
+    <div class="head">
+        <h1> Products </h1>
+        <p>add your products here...</p>
+    </div>
+</div>
+<form action="/search/products" method="post">
+    <input class="form-control" name="search" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+<div class="note-div">
+
+            {{#if search}}
+            <a href="/products/" class="btn btn-success" style="margin: 60px;"> <= </a>
+
+            <div class="card  ">
+                <a href="/products/{{products._id}}">
+                    <div class="card-body">
+                        <p class="card-text">{{products.type}}</p>
+                    </div>
+                </a>
+            </div>
+
+            {{else}}
+
+            {{#if err}}
+            <h1 style="color: white;">No Products Found. Pls Use Our App Full time</h1>
+            {{/if}}
+            {{#each products}}
+
+            <div class="card  ">
+                <a href="/products/{{this._id}}">
+                    <div class="card-body">
+                        <p class="card-text">{{this.type}}</p>
+                    </div>
+                </a>
+            </div>
+
+            {{/each}}
+
+            {{/if}}
+
+</div>
+<div class="below">
+    <a class="plus btn-danger" href="/newproduct">+</a>
+</div>
+
+
+<style>
+    .card {
+        width: 90%;
+        max-height: 40px;
+        overflow-y: hidden;
+        padding: 5px;
+        margin: 10px;
+        background: green;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .note-div {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    p {
+        color: white;
+    }
+
+    .below {
+        position: fixed;
+        right: 50px;
+        bottom: 20px;
+
+    }
+
+    .plus {
+        border-radius: 50px;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 25px;
+    }
+
+    .head {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        color: white;
+    }
+</style>

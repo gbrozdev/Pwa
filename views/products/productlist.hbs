@@ -1,0 +1,65 @@
+<h1>{{product.type}}</h1>
+<h1>{{product.des}}</h1>
+
+<div class="container">
+
+    {{#each items}}
+
+    <div class="row">
+        <div class="prod-box col-md-3 col-5">
+            <img src="" alt="">
+            <p>{{this.type}}</p>
+        </div>
+        <div class="prod-box col-md-3 col-5">
+            <img src="" alt="">
+            <p>{{this.amount}}</p>
+            <a href="/add/{{this.amount}}" class="btn btn-success"></a>
+        </div>
+    </div>
+
+    {{/each}}
+</div>
+<div class="below row">
+    <a class="plus btn btn-danger" href="/newitem/{{product._id}}">+</a>
+</div>
+
+<style>
+    .container {
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .prod-box {
+        width: 20vw;
+        height: 20vh;
+        margin: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(136, 127, 255);
+    }
+
+    h1 {
+        color: white;
+    }
+
+    .below {
+        position: fixed;
+        right: 50px;
+        bottom: 20px;
+
+    }
+
+    .plus {
+        border-radius: 50px;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 25px;
+    }
+</style>

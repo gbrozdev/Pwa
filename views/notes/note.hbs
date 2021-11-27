@@ -1,0 +1,29 @@
+<a href="/notes/" class="btn btn-success" style="margin: 60px;"><=</a>
+<div class="note-div">
+<div class="card" style="width: 90%;">
+  <div class="card-body">
+    <h5 class="card-title">{{note.title}}</h5>
+    <div class="note-time">
+    <h6 class="card-subtitle mb-2 text-muted">{{note.date}}</h6>
+    <h6 class="card-subtitle mb-2 text-muted">{{note.time}} </h6>
+    </div>
+    <p class="card-text">{{note.note}}</p>
+  </div>
+</div>
+</div>
+
+
+<style>
+ .note-div {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+.note-time {
+    display: flex;
+}
+.card-subtitle {
+    margin-right: 10px;
+}
+</style>
